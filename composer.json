@@ -1,0 +1,34 @@
+{
+    "name": "paveld/markdown-blog",
+    "description": "Easy blog displaying articles stored as markdown files.",
+    "keywords": ["markdown", "blog"],
+    "homepage": "https://github.com/PavelD/markdown-blog#readme",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pavel Dobes",
+            "email": "konference@lnx.cz",
+            "role": "Creator"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/PavelD/markdown-blog/issues",
+        "source": "https://github.com/PavelD/markdown-blog"
+    },
+    "require": {
+        "cebe/markdown": "1.2.*",
+        "php": ">=7.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "paveld\\markdownblog\\": ""
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit tests/MarkdownBlogTest.php"
+    }
+}
