@@ -25,10 +25,10 @@
     },
     "autoload": {
         "psr-4": {
-            "paveld\\markdownblog\\": ""
+            "paveld\\markdownblog\\": "src"
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit tests/MarkdownBlogTest.php"
+        "test": "vendor/bin/phpunit src/tests/MarkdownBlogTest.php"
     }
 }
