@@ -1,11 +1,14 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace paveld\markdownblog\tests;
 
 use PHPUnit\Framework\TestCase;
-
-declare(strict_types=1);
+use paveld\markdownblog\MarkdownBlog;
 
 final class MarkdownBlogTest extends TestCase {
-    $this->expectOutputString("hello from MarkdownBlog", new MarkdownBlog());
+
+    public function testMarkdownBlogClass(): void
+    {
+        $this->expectOutputString("hello from paveld\markdownblog\MarkdownBlog", new MarkdownBlog());
+    }
 }
