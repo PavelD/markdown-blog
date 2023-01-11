@@ -3,7 +3,7 @@
 namespace paveld\markdownblog\tests;
 
 use PHPUnit\Framework\TestCase;
-use paveld\markdownblog;
+use paveld\markdownblog\MarkdownBlog;
 
 final class MarkdownBlogTest extends TestCase {
 
