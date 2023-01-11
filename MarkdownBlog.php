@@ -13,6 +13,6 @@ namespace paveld\markdownblog;
 class MarkdownBlog {
 
     function __construct() {
-        echo "hello from " + __CLASS__;
+        echo "hello from " . __CLASS__;
     }
 }
