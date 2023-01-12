@@ -18,9 +18,12 @@
     },
     "require": {
         "cebe/markdown": "1.2.*",
+        "adodb/adodb-php": "^5.22",
+        "ext-mbstring": "*",
         "php": ">=7.3"
     },
     "require-dev": {
+        "ext-curl": "*",
         "phpunit/phpunit": "^9.5"
     },
     "autoload": {
