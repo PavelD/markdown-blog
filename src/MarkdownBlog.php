@@ -1,7 +1,6 @@
 <?php
 /**
- * Markdown extension converting markdown text to media wiki syntax to be able to parse it
- * with MediaWiki Parser.php
+ * Blog based on the markdown source files.
  *
  * @copyright Copyright (c) 2023 Pavel Dobes
  * @license https://github.com/PavelD/markdown-blog/blob/main/LICENSE
