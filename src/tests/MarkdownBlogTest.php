@@ -9,6 +9,12 @@ final class MarkdownBlogTest extends TestCase {
 
     public function testMarkdownBlogClass(): void
     {
-        $this->expectOutputString("hello from paveld\markdownblog\MarkdownBlog", new MarkdownBlog());
+        $this->expectOutputString("", new MarkdownBlog());
+    }
+
+    public function testMarkdownBlogDisplay(): void
+    {
+        $testUri = "uri";
+        $this->expectOutputString("hello from paveld\markdownblog\MarkdownBlog::display with \$uri " . $testUri, MarkdownBlog::display($testUri));
     }
 }
