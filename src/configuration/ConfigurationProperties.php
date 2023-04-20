@@ -13,9 +13,13 @@ use Exception;
 use hpeccatte\PropertiesParser\Parser;
 use hpeccatte\PropertiesParser\PropertyWithValueExtractor;
 
+/**
+ * Configuraiton object; singelton of parseed configuraiton from property file
+ */
 class ConfigurationProperties {
 
     private static ?ConfigurationProperties $instance = null;
+    private string $propertiesFile = "./conf/configuration.properties";
     private ?array $configurationValues = null;
     
     public static function getInstance(): ConfigurationProperties {
@@ -31,7 +35,6 @@ class ConfigurationProperties {
     }
 
     private function __clone() {
-        throw new \RuntimeException("Cannot clone singleton");
     }
 
     public function __wakeup() {
@@ -39,11 +42,17 @@ class ConfigurationProperties {
     }
 
     private function parseConfiguration(): void {
-        $content = file_get_contents("./conf/configuration.properties");
+        $content = file_get_contents($this->propertiesFile);
         $parser = new Parser(null, new PropertyWithValueExtractor());
         $this->configurationValues = $parser->parse($content);
     }
 
+    /**
+     * Get configuration value for given key
+     * @param string $key konfiguraton key
+     * @param string $default default value when configuration is missing
+     * @return string value for given key
+     */
     public function getValue(string $key, string $default = ""): string {
         return array_key_exists($key, $this->configurationValues) ? $this->configurationValues[$key] : $default;
     }
