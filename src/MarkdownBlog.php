@@ -9,6 +9,11 @@
 
 namespace paveld\markdownblog;
 
+use Exception;
+
+/**
+ * Summary of MarkdownBlog
+ */
 class MarkdownBlog {
 
     private function __construct() {
@@ -21,7 +26,12 @@ class MarkdownBlog {
         // parse md & data files
     }
 
-    static function display(string $uri) {
-        echo "hello from " . __CLASS__ . "::" . __METHOD__ . " with \$uri " . $uri;
+    /**
+     * Summary of display
+     * @param string $uri
+     * @return string
+     */
+    static function display(string $uri): void {
+        echo "hello from " . __METHOD__ . " with \$uri " . $uri;
     }
 }

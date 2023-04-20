@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * Blog based on the markdown source files.
  *
@@ -9,8 +9,9 @@
 
 namespace paveld\markdownblog\configuration;
 
-use hpeccatte\PropertiesParser\Parser;
 use Exception;
+use hpeccatte\PropertiesParser\Parser;
+use hpeccatte\PropertiesParser\PropertyWithValueExtractor;
 
 class ConfigurationProperties {
 
@@ -19,7 +20,7 @@ class ConfigurationProperties {
     
     public static function getInstance(): ConfigurationProperties {
         if (self::$instance === null) {
-            ConfigurationProperties $instance = new self();
+            $instance = new self();
             $instance->parseConfiguration();
             self::$instance = $instance;
         }
@@ -30,15 +31,20 @@ class ConfigurationProperties {
     }
 
     private function __clone() {
+        throw new \RuntimeException("Cannot clone singleton");
     }
 
     public function __wakeup() {
         throw new Exception("Cannot unserialize singleton");
     }
 
-    private function parseConfiguration() {
+    private function parseConfiguration(): void {
         $content = file_get_contents("./conf/configuration.properties");
-        $parser = new Parser();
+        $parser = new Parser(null, new PropertyWithValueExtractor());
         $this->configurationValues = $parser->parse($content);
+    }
+
+    public function getValue(string $key, string $default = ""): string {
+        return array_key_exists($key, $this->configurationValues) ? $this->configurationValues[$key] : $default;
     }
 }

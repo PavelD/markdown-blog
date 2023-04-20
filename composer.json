@@ -19,6 +19,7 @@
     "require": {
         "cebe/markdown": "1.2.*",
         "adodb/adodb-php": "^5.22",
+        "hpeccatte/properties-parser": "^1.0",
         "ext-mbstring": "*",
         "php": ">=7.3"
     },
@@ -32,6 +33,6 @@
         }
     },
     "scripts": {
-        "test": "vendor/bin/phpunit src/tests/MarkdownBlogTest.php"
+        "test": "vendor/bin/phpunit src/tests/"
     }
 }

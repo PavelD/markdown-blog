@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 /**
  * Blog based on the markdown source files.
  *
@@ -16,11 +16,11 @@ class ImportFiles {
         self::parseDataFolder();
     }
 
-    static function parseMdFolder() {
+    static function parseMdFolder(): void {
         echo "hello from " . __CLASS__ . "::" . __METHOD__ ;
     }
 
-    static function parseDataFolder() {
+    static function parseDataFolder(): void {
         echo "hello from " . __CLASS__ . "::" . __METHOD__ ;
     }
 }
