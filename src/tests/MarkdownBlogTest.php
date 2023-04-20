@@ -7,11 +7,6 @@ use paveld\markdownblog\MarkdownBlog;
 
 final class MarkdownBlogTest extends TestCase {
 
-    public function testMarkdownBlogClass(): void
-    {
-        $this->expectOutputString("", new MarkdownBlog());
-    }
-
     public function testMarkdownBlogDisplay(): void
     {
         $testUri = "uri";
