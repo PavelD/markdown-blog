@@ -1,6 +1,8 @@
 <?php
 
-require_once('../vendor/autoload.php');
+chdir(dirname(__FILE__) . "/..");
+
+require_once('./vendor/autoload.php');
 
 use paveld\markdownblog\MarkdownBlog;
 
