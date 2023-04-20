@@ -12,9 +12,10 @@ namespace paveld\markdownblog;
 class MarkdownBlog {
 
     function __construct() {
-        echo "hello from " . __CLASS__;
+        // change current working directory to /
+        chdir(dirname(__FILE__) . "/..");
     }
-    
+
     static function display(string $uri) {
         echo "hello from " . __CLASS__ . "::" . __METHOD__ . " with \$uri " . $uri;
     }
