@@ -11,9 +11,14 @@ namespace paveld\markdownblog;
 
 class MarkdownBlog {
 
-    function __construct() {
+    private function __construct() {
+        throw new Exception("Cannot create instance of static class");
+    }
+
+    private static function init() {
         // change current working directory to /
         chdir(dirname(__FILE__) . "/..");
+        // parse md & data files
     }
 
     static function display(string $uri) {
