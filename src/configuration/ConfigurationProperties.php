@@ -20,7 +20,7 @@ class ConfigurationProperties {
 
     private static ?ConfigurationProperties $instance = null;
     private string $propertiesFile = "./conf/configuration.properties";
-    private ?array $configurationValues = null;
+    private array $configurationValues = array();
     
     public static function getInstance(): ConfigurationProperties {
         if (self::$instance === null) {
